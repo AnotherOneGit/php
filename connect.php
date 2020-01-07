@@ -1,12 +1,15 @@
 <?php
 include_once "user-pass.php";
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=u0727473_default', $user, $pass);
-    foreach($dbh->query('SELECT * from games') as $row) {
-        echo "<div>
-        <img src={$row['pic']}><br />
-        {$row['title']} <br />
-        Оценка: {$row['rate']}
+    $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
+    foreach($dbh->query('SELECT * from test') as $row) {
+        echo "<div class='row'>
+         <hr>
+        <div class='col s3 teal accent-3'>{$row['date']}</div>
+        <div class='col s3 teal'>{$row['info']} </div>
+        <div class='col s3 teal lighten-2'>{$row['number']}</div>
+        <div class='col s3 teal lighten-2'>{$row['number']}</div>
+         <hr>
         </div>";
     }
     $dbh = null;

@@ -3,5 +3,5 @@ html, body {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 1em;
     
-background: linear-gradient(0deg, rgba(0,131,143,1) 0%, rgba(0,105,92,1) 100%);
+background: coral;
 }

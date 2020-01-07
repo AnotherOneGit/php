@@ -1,3 +1,4 @@
 <?php
-$user = ;
-$pass = ;
+$db = 'test';
+$user = 'root';
+$pass = 'weqweqweq';

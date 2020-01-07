@@ -1,15 +1,16 @@
 <?php
 include_once "user-pass.php";
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=u0727473_default', $user, $pass);
-    $stmt = $dbh->prepare("SELECT * FROM games WHERE title = ?");
-    if ($stmt->execute(array('Driveclub'))) {
+    $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
+    $stmt = $dbh->prepare("SELECT * FROM test WHERE number = ?");
+    if ($stmt->execute(array('16969'))) {
       while ($row = $stmt->fetch()) {
-        echo "<div>
-        <img src={$row['pic']}><br />
-        {$row['title']} <br />
-        Оценка: {$row['rate']}
-        </div>";  }
+          echo "<div>
+        {$row['date']}
+        {$row['info']} 
+        {$row['number']} <br />
+        </div>";
+      }
     }
     $dbh = null;
 } catch (PDOException $e) {
